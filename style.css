@@ -1,0 +1,82 @@
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+hr {
+    width: 80%;
+}
+
+#title {
+    font-size: 36px;
+    font-style: bold;
+    letter-spacing: 2px;
+}
+
+#board {
+    width: 350px;
+    margin: 0 auto;
+    margin-top: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    animation-name: fade;
+    animation-duration: 2s;
+    border-radius: 10px;
+}
+
+#keyboard {
+    width: 80%;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+/* Letter tiles */
+.tile {
+    border: 2px solid lightgrey;
+    width: 60px;
+    height: 60px;
+    margin: 2.5px;
+    color: black;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+/* Resultant tile from input */
+
+.present {
+    background-color: #c9b458;
+    color: white;
+    border-color: white;
+    animation-name: enter;
+    animation-duration: 1s;
+}
+
+.absent {
+    background-color: #787c7e;
+    color: white;
+    border-color: white;
+    animation-name: enter;
+    animation-duration: 1s;
+}
+
+.correct {
+    background-color: #6aaa64;
+    color: white;
+    border-color: white;
+    animation-name: enter;
+    animation-duration: 1s;
+}
+
