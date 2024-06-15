@@ -1,7 +1,7 @@
 body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
-    background-color: #151515;
+    background-color: #121212;
     color: white;
 }
 
@@ -40,8 +40,7 @@ hr {
     align-items: center;
     border-radius: 10px;
     padding: 20px;
-    background-color: white;
-    border: solid 2px #424242;
+    /* border: solid 2px #424242; */
 }
 
 #keyboard {
@@ -53,6 +52,24 @@ hr {
     margin: 0 auto;
 }
 
+.r1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.r2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.r3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #nala {
     display: none;
     width: 100%;
@@ -62,47 +79,100 @@ hr {
 
 /* Letter tiles */
 .tile {
-    border: 2px solid lightgrey;
+    border: 2px solid #9c9c9c;
     width: 60px;
     height: 60px;
     margin: 2.5px;
-    color: black;
-    background-color: white;
+    color: white;
     display: flex;
     justify-content: center; /* Centers horizontally */
     align-items: center; /* Centers vertically */
     animation-name: fade;
     animation-duration: 2s;
+    font-size: 25px;
 }
+
+.t1 {
+    margin-left: 3.5px;
+    margin-right: 3.5px;
+    font-size: 25px;
+    background-color: #9c9c9c;
+}
+
+.r1 .t1 {
+    font-weight: bold;
+    color: white;
+    width: 45px;
+    font-size: 14px;
+    border: 0;
+    border-radius: 5px;
+}
+
+.r2 .t1 {
+    font-weight: bold;
+    color: white;
+    width: 42.5px;
+    font-size: 14px;
+    border: 0;
+    border-radius: 5px;
+}
+
+.r3 .t1 {
+    font-weight: bold;
+    color: white;
+    width: 45px;
+    font-size: 14px;
+    border: 0;
+    border-radius: 5px;
+}
+
 
 /* Resultant tile from input */
 
 .present {
     background-color: #c9b458;
     color: white;
-    border-color: white;
-    animation-name: enter;
-    animation-duration: 2s;
+    animation: flip-in 2s ease forwards;
+    border-color: #c9b458;
 }
 
 .absent {
     background-color: #424242;
     color: white;
-    border-color: white;
-    animation-name: enter;
-    animation-duration: 1.25s;
+    animation: flip-in 2s ease forwards;
+    border-color: #424242;
+    perspective: 1000px;
 }
 
 .correct {
-    background-color: #6aaa64;
+    background-color: #538d4e; /* 538d4e */
     color: white;
-    border-color: white;
-    animation-name: enter;
-    animation-duration: 2s;
+    border-color: #538d4e;
+    animation: flip-in 2s ease forwards;
 }
 
 @keyframes enter {
-    from {transform: rotateY(90deg);}
+    from {
+        transform: rotateY(90deg);
+        transform-origin: center;
+    }
+    to {
+        transform: rotateY(0deg);
+    }
+}
+
+@keyframes flip-in {
+    0% {
+        transform: rotateX(0deg); /* Starts from the back */
+        background-color: #424242;
+    }
+    35% {
+        background-color: #424242;
+        transform: rotateX(90deg); /* Halfway, facing front */
+    }
+    100% {
+        transform: rotateX(0deg); /* Fully facing front */
+    }
 }
 
 @keyframes cat {

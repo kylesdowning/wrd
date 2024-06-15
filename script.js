@@ -15487,19 +15487,20 @@ function initialize() {
             document.getElementById('board').appendChild(tile);
         }
     }
-    let keyBoard = document.getElementById('keyboard');
-    let alphabet = "abcdefghijklmnopqrstuvwxyz";
-    for (let i = 0; i < 26; i++) {
-        let tile = document.createElement("span");
-        tile.id = alphabet[i];
-        tile.classList.add('tile');
-        tile.innerText = alphabet[i];
-        tile.onclick = function() {
-            keyClick(tile.innerText);
-        }
-        document.getElementById('keyboard').appendChild(tile);
-    }
+    // let keyBoard = document.getElementById('keyboard');
+    // let alphabet = "abcdefghijklmnopqrstuvwxyz";
+    // for (let i = 0; i < 26; i++) {
+    //     let tile = document.createElement("span");
+    //     tile.id = alphabet[i];
+    //     tile.classList.add('tile');
+    //     tile.innerText = alphabet[i];
+    //     tile.onclick = function() {
+    //         keyClick(tile.innerText);
+    //     }
+    //     document.getElementById('keyboard').appendChild(tile);
+    // }
     // Arror function passes the key pressed as parameter e.
+
     document.addEventListener("keyup", (e) => {
         if (gameOver) return;
         if ("KeyA" <= e.code && e.code <= "KeyZ") {
